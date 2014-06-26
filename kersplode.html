@@ -6,21 +6,14 @@
 	<script type='text/javascript'>
 
 		//test for webgl support
-		var canvas = document.createElement('canvas'),
-				gl = null;
+		var canvas = document.createElement('canvas');
 
-		document.body.appendChild(canvas);
-
-		try {
-			gl = canas.getContext('webgl') || canvas.getContext('experimental-webgl');
-		}
-		catch (x) {}
-
-		if (!gl) {
+		if (!canvas.getContext('webgl') || !canvas.getContext('experimental-webgl')) {
 			var h1 = document.createElement('p');
 			h1.innerHTML = "You might not fully support webGL?!";
 			document.body.appendChild(h1);
 		}
+		
 	</script>
 
 	<script type='text/javascript' src='webgl.js'></script>
