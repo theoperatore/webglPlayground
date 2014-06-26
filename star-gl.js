@@ -37673,9 +37673,9 @@ function cloudShim() {
 			contextResult.putImageData(dataResult,0,0);
 			material.map.needsUpdate = true;;
 		})
-		imageTrans.src	= '../models/solar/earthcloudmaptrans.jpg';
+		imageTrans.src	= './models/solar/earthcloudmaptrans.jpg';
 	}, false);
-	imageMap.src	= '../models/solar/earthcloudmap.jpg';
+	imageMap.src	= './models/solar/earthcloudmap.jpg';
 
 	var geometry	= new THREE.SphereGeometry(0.51, 32, 32)
 	var material	= new THREE.MeshPhongMaterial({
