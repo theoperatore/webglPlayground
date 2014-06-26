@@ -6,9 +6,15 @@
 	<script type='text/javascript'>
 
 		//test for webgl support
-		var canvas = document.createElement('canvas');
-		if (!canvas.getContext('webgl') || !canvas.getContext('experimental-webgl')) {
+		var canvas = document.createElement('canvas'),
+				gl = null;
 
+		try {
+			gl = canas.getContext('webgl') || canvas.getContext('experimental-webgl');
+		}
+		catch (x) {}
+
+		if (!gl) {
 			var h1 = document.createElement('h1');
 			h1.innerHTML = "DALEKS DONT KNOW WHY YOUR BROWSER DOESNT SUPPORT WEBGL?!?!";
 			document.body.appendChild(h1);
