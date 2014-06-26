@@ -1,8 +1,7 @@
 {
-  "name": "cat-gl",
+  "name": "webglPlayground",
   "version": "0.0.0",
-  "description": "A 3d model using webGL (three.js), that responds to mouse movement events",
-  "main": "index.js",
+  "description": "My first attempt at webGL!",
   "directories": {
     "test": "tests"
   },
@@ -14,7 +13,6 @@
     "kersplode" : "beefy tests/kersplode.js"
   },
   "keywords": [
-    "cat",
     "webGL"
   ],
   "author": "Alex Petersen <theoperatore@gmail.com>",
