@@ -8,8 +8,6 @@
 		var canvas = document.createElement('canvas'),
 				gl = null;
 
-		document.body.appendChild(canvas);
-
 		try {
 			gl = canas.getContext('webgl') || canvas.getContext('experimental-webgl');
 		}
