@@ -4,6 +4,7 @@
 </head>
 <body>
 	<script type='text/javascript'>
+	
 		//test for webgl support
 		var canvas = document.createElement('canvas'),
 				gl = null;
@@ -14,8 +15,8 @@
 		catch (x) {}
 
 		if (!gl) {
-			var h1 = document.createElement('h1');
-			h1.innerHTML = "DALEKS DONT KNOW WHY YOUR BROWSER DOESNT SUPPORT WEBGL?!?!";
+			var h1 = document.createElement('p');
+			h1.innerHTML = "You might not fully support webGL?!";
 			document.body.appendChild(h1);
 		}
 	</script>
