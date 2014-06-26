@@ -113,9 +113,9 @@ earth_container.position.z = 0;
 var geometry = new THREE.SphereGeometry(0.5, 32, 32);
 var material = new THREE.MeshPhongMaterial();
 
-material.map     = THREE.ImageUtils.loadTexture('../models/solar/earthmap1k.jpg');
-material.bumpMap = THREE.ImageUtils.loadTexture('../models/solar/earthbump1k.jpg');
-material.specularMap = THREE.ImageUtils.loadTexture('../models/solar/earthspec1k.jpg');
+material.map     = THREE.ImageUtils.loadTexture('./models/solar/earthmap1k.jpg');
+material.bumpMap = THREE.ImageUtils.loadTexture('./models/solar/earthbump1k.jpg');
+material.specularMap = THREE.ImageUtils.loadTexture('./models/solar/earthspec1k.jpg');
 material.speular = new THREE.Color('grey');
 material.bumpScale = 0.05;
 
@@ -134,7 +134,7 @@ earth_container.add(cloudMesh);
 //create the moon!
 var moonGeo = new THREE.SphereGeometry(0.1, 32, 32);
 var moonMat = new THREE.MeshPhongMaterial({
-	map :     THREE.ImageUtils.loadTexture('../models/solar/moonmap1k.jpg')
+	map :     THREE.ImageUtils.loadTexture('./models/solar/moonmap1k.jpg')
 	//bumpMap : THREE.ImageUtils.loadTexture('../models/solar/moonbump1k.jpg'),
 	//bumpScale : 0.05
 });
@@ -151,7 +151,7 @@ earth_container.add(moon);
 //create starfield
 var starGeo = new THREE.SphereGeometry(90, 32, 32);
 var starMat = new THREE.MeshBasicMaterial({
-	map  : THREE.ImageUtils.loadTexture('../models/solar/galaxy_starfield.png'),
+	map  : THREE.ImageUtils.loadTexture('./models/solar/galaxy_starfield.png'),
 	side : THREE.BackSide
 });
 var starMesh = new THREE.Mesh(starGeo, starMat);
@@ -172,15 +172,29 @@ function animate() {
 	renderer.render(scene, camera);
 }
 
+function look(ev) {
+
+	if (ev.type === 'mousemove') {
+		mouse.x	= (ev.clientX / window.innerWidth ) - 0.5;
+		mouse.y	= -(ev.clientY / window.innerHeight) + 0.5;
+
+		camera.position.x += mouse.x*6 - camera.position.x * 1;
+		camera.position.y += mouse.y*5 - camera.position.y * 1;
+
+		camera.lookAt(scene.position);
+	}
+	else if (ev.type === 'touchmove') {
+		mouse.x	= (ev.changedTouches[0].clientX / window.innerWidth ) - 0.5;
+		mouse.y	= -(ev.changedTouches[0].clientY / window.innerHeight) + 0.5;
+
+		camera.position.x += mouse.x*6 - camera.position.x * 1;
+		camera.position.y += mouse.y*5 - camera.position.y * 1;
+
+		camera.lookAt(scene.position);
+	}
+}
+
 //add mouse movement controls
-document.addEventListener('mousemove', function(ev) {
-	mouse.x	= (ev.clientX / window.innerWidth ) - 0.5;
-	mouse.y	= -(ev.clientY / window.innerHeight) + 0.5;
-
-	camera.position.x += mouse.x*6 - camera.position.x * 1;
-	camera.position.y += mouse.y*5 - camera.position.y * 1;
-
-	camera.lookAt(scene.position);
-});
-
+document.addEventListener('mousemove', look);
+document.addEventListener('touchmove', look);
 animate();
