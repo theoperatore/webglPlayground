@@ -1,0 +1,28 @@
+{
+  "name": "cat-gl",
+  "version": "0.0.0",
+  "description": "A 3d model using webGL (three.js), that responds to mouse movement events",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "beefy tests/star.js",
+    "shape": "beefy tests/shapes.js",
+    "earth": "beefy tests/test.js",
+    "ball" : "beefy tests/ballTracking.js",
+    "kersplode" : "beefy tests/kersplode.js"
+  },
+  "keywords": [
+    "cat",
+    "webGL"
+  ],
+  "author": "Alex Petersen <theoperatore@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "beefy": "^2.0.2",
+    "browserify": "^4.1.11",
+    "three": "^0.66.2",
+    "tween.js": "^0.14.0"
+  }
+}
