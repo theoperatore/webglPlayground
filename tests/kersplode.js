@@ -93,7 +93,8 @@ var particles = new engine.THREE.Geometry(),
 		p_texture = engine.THREE.ImageUtils.loadTexture('./models/particle.png'),
 		particleSystem,
 		particleMaterial,
-		numParticles = 7777;
+		numParticles = 7777,
+		speed = 1;
 
 //
 // Setup particle system
@@ -163,7 +164,8 @@ function update(time) {
 			kersploded = true;
 		}
 		else if (kersploded){
-			particle.z += 1;
+			particle.z += speed;
+
 		}
 
 		if (particle.z >= (150 + engine.camera.position.z)) {
@@ -185,10 +187,12 @@ function update(time) {
 	else if (inputs['up']) {
 		//particleSystem.position.z -= 1;
 		//engine.camera.position.z -= 1;
+		speed += 0.5;
 	}
 	else if (inputs['down']) {
 		//particleSystem.position.z += 1;
 		//engine.camera.position.z += 1;
+		speed -= 0.5;
 	}
 
 	engine.TWEEN.update();
