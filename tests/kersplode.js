@@ -135,10 +135,10 @@ for (var i = 0; i < particles.vertices.length; i++) {
 				x : Math.random() * 1200 - 600,
 				y : Math.random() * 1200 - 600,
 				z : Math.random() * 1200 - 600
-			}, 1200)
+			}, 600)
 		//.repeat(1)
 		//.yoyo(true)
-		.easing(engine.TWEEN.Easing.Exponential.InOut);
+		.easing(engine.TWEEN.Easing.Exponential.Out);
 }
 
 particles.dynamic = true;

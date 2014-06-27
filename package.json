@@ -10,7 +10,8 @@
     "shape": "beefy tests/shapes.js",
     "earth": "beefy tests/test.js",
     "ball" : "beefy tests/ballTracking.js",
-    "kersplode" : "beefy tests/kersplode.js"
+    "kersplode" : "beefy tests/kersplode.js",
+    "tardis" : "beefy tests/tardis.js"
   },
   "keywords": [
     "webGL"
