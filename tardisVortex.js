@@ -38454,6 +38454,9 @@ exports.wormhole = function( _3 ) {
 
 	//define the wormhole geometry
 	var path = [
+		new _3.Vector3(   0,    0,  -70),
+		new _3.Vector3(   0,    0,  -50),
+		new _3.Vector3(   0,    0,  -30),
 		new _3.Vector3(   0,    0,  -10),
 		new _3.Vector3(   0,    0,    0),
 		new _3.Vector3( -40,    0,   40),
@@ -38466,7 +38469,9 @@ exports.wormhole = function( _3 ) {
 		new _3.Vector3(-120, -120,  320),
 		new _3.Vector3(   0,    0,  340),
 		new _3.Vector3(   0,    0,  380),
-		new _3.Vector3(   0,    0,  420)
+		new _3.Vector3(   0,    0,  420),
+		new _3.Vector3(   0,    0,  460),
+		new _3.Vector3(   0,  -80,  500),
 	];
 																// Path, pathSegments, radius, radiusSegments, closed
 	var geo = new _3.TubeGeometry(new _3.SplineCurve3(path), 64, 10, 64, false);
