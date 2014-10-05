@@ -38422,7 +38422,7 @@ var engine = require('../scripts/engine').init(),
 			'down'  : false
 		},
 		dt = 0,
-		now = performance.now() || +new Date(),
+		now = +new Date(),
 		prev = now,
 		anim;
 
